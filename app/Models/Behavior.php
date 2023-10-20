@@ -18,18 +18,11 @@ class Behavior extends Model
     protected $guarded = [];
 
     /**
-     * The relations to eager load on every query.
-     *
-     * @var array
-     */
-    protected $with = ['user'];
-
-    /**
      * Belongs to Relation with users table
      * 
      * @return BelongsTo
      */
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
