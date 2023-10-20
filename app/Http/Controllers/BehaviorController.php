@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Behavior;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -14,6 +15,8 @@ class BehaviorController extends Controller
      */
     public function index()
     {
-        return view('behavior');
+        $behaviors = Behavior::all();
+
+        return view('behavior', compact('behaviors'));
     }
 }
